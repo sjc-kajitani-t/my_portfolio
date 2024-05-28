@@ -1,0 +1,11 @@
+version: '3'
+services:
+  my-portfolio:
+    container_name: my-portfolio
+    build: .
+    image: my-portfolio-node
+    tty: true
+    volumes:
+      - .:/my-portfolio
+    ports:
+      - "5173:5173"
