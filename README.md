@@ -26,8 +26,9 @@ http://localhost:5173/home
 
 ## 進捗メモ
 
-- [ x ] React + TypeScript + Vite 環境の構築
-- [ x ] ルーティング設定
-- [ x ] APIモックの実装
+- [x] React + TypeScript + Vite 環境の構築
+- [x] ルーティング設定
+- [x] APIモックの実装
 - [ ] 業務経歴を表示する画面の実装
 - [ ] Grommetなどを利用して全体的にデザイン調整
+- [ ] +α
