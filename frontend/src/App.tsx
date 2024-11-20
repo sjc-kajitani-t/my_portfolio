@@ -1,31 +1,21 @@
-import { Button } from 'grommet';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-
-import { mockStart } from './mocks/api';
-import { Home } from './views/Home';
-import { Info } from './views/Info';
-
-const NotFound = () => {
-  return <h2>ページが見つかりません</h2>;
-};
+import React from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { Home } from './views/entrypoints/Home';
+import { Chat } from './views/entrypoints/Chat';
+import { Lock } from './views/entrypoints/Lock';
 
 function App() {
-  // APIモック起動
-  mockStart();
-
   return (
-    <>
+    <div style={{ margin: 0, padding: 0, height: '100vh', width: '100vw' }}>
       <BrowserRouter>
-        <Link to="/home"><Button primary label="Home" /></Link>
-        <Link to="/info"><Button primary label="Info" /></Link>
-
         <Routes>
+          <Route path="lock" element={<Lock />} />
           <Route path="home" element={<Home />} />
-          <Route path="info" element={<Info />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="chat" element={<Chat />} />
+          <Route path="*" element={<Navigate to="/lock" />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 

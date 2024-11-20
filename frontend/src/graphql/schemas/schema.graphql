@@ -1,0 +1,37 @@
+type Query {
+  myInfo: MyInfo!
+}
+
+type MyInfo {
+  id: ID!
+  name: String!
+  birthday: String!
+  sex: String!
+  age: Int!
+  career: Career!
+  products: [Product!]!
+  skills: [Skill!]!
+}
+
+type Career {
+  id: ID!
+  start_date: String!
+  end_date: String!
+  employee_id: ID!
+}
+
+type Product {
+  id: ID!
+  name: String!
+  description: String!
+  start_date: String!
+  end_date: String!
+  sort_order: Int!
+  employee_id: ID!
+}
+
+type Skill {
+  name: String!
+  version: String!
+  employee_id: ID!
+}

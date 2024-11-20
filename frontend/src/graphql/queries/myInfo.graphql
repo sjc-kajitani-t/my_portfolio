@@ -1,0 +1,27 @@
+query GetMyInfo {
+  myInfo {
+    id
+    name
+    birthday
+    sex
+    age
+    career {
+      id
+      start_date
+      end_date
+      employee_id
+    }
+    products {
+      id
+      name
+      description
+      start_date
+      end_date
+      sort_order
+    }
+    skills {
+      name
+      version
+    }
+  }
+}

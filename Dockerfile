@@ -7,5 +7,3 @@ COPY . .
 WORKDIR /app/my-portfolio/frontend
 
 RUN npm install
-
-CMD ["npm", "run", "dev"]

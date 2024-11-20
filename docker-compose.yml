@@ -1,11 +1,24 @@
 version: '3'
 services:
-  my-portfolio:
-    container_name: my-portfolio
+  react-vite:
+    container_name: react-vite
     build: .
     image: my-portfolio-node
     tty: true
     volumes:
-      - .:/my-portfolio
+      - .:/app/my-portfolio
+      - /app/my-portfolio/frontend/node_modules
     ports:
-      - "5173:5173"
+      - "3000:3000"
+    command: npm run dev
+  mock-server:
+    container_name: mock-server
+    build: .
+    image: my-portfolio-node
+    tty: true
+    volumes:
+      - .:/app/my-portfolio
+      - /app/my-portfolio/frontend/node_modules
+    ports:
+      - "4000:4000"
+    command: npm run mock
